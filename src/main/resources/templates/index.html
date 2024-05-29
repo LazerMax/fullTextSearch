@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск вакансии</title>
+</head>
+<body>
+<h1>Поиск вакансии</h1>
+<form method="POST" th:action="@{/}">
+    <div>
+        <input type="text" name="searchStr">
+        <button type="submit">Найти</button>
+    </div>
+</form>
+<h1>Полученные результаты</h1>
+<table border="separate">
+    <tr th:each="worker,iter : ${bookPage.content}">
+        <td th:text="${iter.index+1}"></td>
+        <td th:text="${worker.salary}"></td>
+        <td th:text="${worker.description}"></td>
+        <td><a th:href="@{/info/{workerId}(workerId=${worker.id})}">View</a></td>
+    </tr>
+</table>
+<a th:href="@{/add}">Add</a>
+</body>
+</html>

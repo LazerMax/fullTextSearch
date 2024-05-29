@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о вакансии</title>
+</head>
+<body>
+<h1>Информация о вакансии</h1>
+<a th:href="@{/}">Назад</a>
+<div>
+    Название вакансии:<span th:text="${worker.name}"></span>
+</div>
+<div>
+    Размер заработной платы:<span th:text="${worker.salary}"></span>
+</div>
+<div>
+    Описание вакансии:
+</div>
+<textarea contenteditable="false" cols="100" rows="30" th:text="${worker.description}"></textarea>
+</body>
+</html>
